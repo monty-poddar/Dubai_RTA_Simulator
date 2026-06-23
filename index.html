@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dubai RTA Simulator V4</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loadingScreen">
+    <h1>Dubai RTA Simulator</h1>
+    <p class="tagline">Third-person car game + RTA learning mode</p>
+    <div class="routeCards">
+      <button class="route selected" data-route="alquoz"><span>Al Quoz</span><small>industrial + flyover + roundabout</small></button>
+      <button class="route" data-route="alqusais"><span>Al Qusais</span><small>residential + school + signals</small></button>
+      <button class="route" data-route="portjumeirah"><span>Port Jumeirah</span><small>coastal + palms + merging</small></button>
+    </div>
+    <button id="startBtn">Start Driving</button>
+    <p class="small">Mobile: joystick + accelerator/brake. Desktop: WASD / Arrow keys. This is an independent practice simulator, not an official RTA product.</p>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud">
+    <div class="panel leftPanel">
+      <div><strong>Route:</strong> <span id="routeName">Al Quoz</span></div>
+      <div><strong>Speed:</strong> <span id="speed">0</span> km/h</div>
+      <div><strong>Score:</strong> <span id="score">100</span></div>
+      <div><strong>Faults:</strong> <span id="faults">0</span></div>
+      <div><strong>Progress:</strong> <span id="progress">0</span>%</div>
+    </div>
+    <div class="panel examiner">
+      <div class="examinerTitle">RTA Examiner</div>
+      <div id="instruction">Move off when safe. Check mirror, signal, then go.</div>
+      <div id="nextTask">Next: prepare to move off.</div>
+    </div>
+    <div class="panel rightPanel">
+      <button id="cameraBtn">Camera</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div id="faultPanel" class="panel">
+    <div class="faultHeader">Fault log</div>
+    <div id="faultList">No faults yet. Drive smoothly.</div>
+  </div>
+
+  <div id="controls">
+    <div class="joystick" id="joystick"><div class="stick" id="stick"></div></div>
+    <div class="actionCluster">
+      <button class="mini" id="mirrorBtn">Mirror</button>
+      <button class="mini" id="leftInd">◀</button>
+      <button class="mini" id="rightInd">▶</button>
+      <button class="pedal accel" id="accelBtn">ACCEL</button>
+      <button class="pedal brake" id="brakeBtn">BRAKE</button>
+    </div>
+  </div>
+
+  <div id="resultModal" class="hidden">
+    <div class="resultCard">
+      <h2 id="resultTitle">Test Result</h2>
+      <p id="resultText"></p>
+      <div id="finalFaults"></div>
+      <button onclick="location.reload()">Try Again</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
