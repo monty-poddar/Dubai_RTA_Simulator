@@ -1,8 +1,6 @@
-# Dubai RTA Simulator V4
+# Dubai RTA Simulator
 
 A web-based third-person driving practice simulator inspired by Dubai RTA road-test learning scenarios.
-
-## What changed in V4
 
 - Longer route so the game does not end too quickly
 - Visible car with third-person camera
@@ -20,14 +18,6 @@ A web-based third-person driving practice simulator inspired by Dubai RTA road-t
 
 Open `index.html` in Chrome.
 
-## Deploy on GitHub Pages
-
-1. Create repo: `dubai-rta-simulator`
-2. Upload all files from this folder
-3. Go to Settings → Pages
-4. Source: Deploy from branch
-5. Branch: main, folder: /root
-6. Open the GitHub Pages URL
 
 ## Important note
 
